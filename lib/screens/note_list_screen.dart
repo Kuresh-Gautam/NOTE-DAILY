@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: unnecessary_import
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notely/models/note.dart';

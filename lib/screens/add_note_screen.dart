@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:hive/hive.dart';
+// ignore: unused_import
 import 'package:hive_flutter/hive_flutter.dart';
 
 class AddNoteScreen extends StatefulWidget {
-  AddNoteScreen({Key? key}) : super(key: key);
+  const AddNoteScreen({Key? key}) : super(key: key);
 
   @override
   _AddNoteScreenState createState() => _AddNoteScreenState();
@@ -11,6 +13,8 @@ class AddNoteScreen extends StatefulWidget {
 
 class _AddNoteScreenState extends State<AddNoteScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  String? title;
+  String? descraption;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,12 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   decoration: const InputDecoration(
                     label: Text('Title'),
                   ),
-                
+                  autocorrect: false,
+                  onChanged: (val) {
+                    setState(() {
+                      title = val;
+                    });
+                  },
                 ),
               ],
             )),
