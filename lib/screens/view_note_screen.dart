@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class ViewNoteScreen extends StatelessWidget {
@@ -22,8 +24,12 @@ class ViewNoteScreen extends StatelessWidget {
         children: [
           Text(
             description.toString(),
-            style: TextStyle(fontSize: 30),
-          )
+            style: const TextStyle(fontSize: 30),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Image.file(File(imageUrl!))
         ],
       ),
     );
